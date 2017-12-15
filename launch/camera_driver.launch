@@ -1,0 +1,7 @@
+<launch>
+    <node name="cameraDriver" pkg="camera_driver" type="camera_driver_node" output="screen">
+        <param name="camera_address" value="/dev/video0" />
+        <!-- <param name="camera_address" value="http://192.168.110.1:8081//?action=stream.mjpg" /> -->
+        <!-- <remap from="/camera/image_raw/origin" to="/camera/image_raw"/> -->
+    </node>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <node name="camwaylens" pkg="cam_waylens" type="cam_waylens_node" output="screen">
+        <param name="camera_address" value="/dev/video1" />
+        <remap from="/cam0/image_raw/distored" to="/camera/image_raw"/>
+    </node>
+</launch>

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(cam_waylens)
+project(camera_driver)
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+  roslib
 )
 find_package(OpenCV 3.2 REQUIRED)
 
@@ -100,10 +101,10 @@ find_package(OpenCV 3.2 REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS
-  LIBRARIES cam_waylens
-  CATKIN_DEPENDS cv_bridge opencv3 roscpp rospy sensor_msgs
-  DEPENDS system_lib
+  #INCLUDE_DIRS
+  #LIBRARIES camera_driver
+  #CATKIN_DEPENDS cv_bridge opencv3 roscpp rospy sensor_msgs
+  #DEPENDS system_lib
 )
 
 ###########
@@ -130,7 +131,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
- add_executable(${PROJECT_NAME}_node src/cam_waylens.cpp)
+ add_executable(${PROJECT_NAME}_node src/camera_driver.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
